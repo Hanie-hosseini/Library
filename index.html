@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLUB BOOK | کلاب بوک</title>
+    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./res.css">
+    <link rel="stylesheet" href="assets/font/DanaPro/DanaPro/Webfonts/css/style.css">
+    <link rel="shortcut icon" href="assets/images/icons/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="header_color"> </div>
+    <header class="header containerAll">
+
+        <div class="header_container">
+            <div class="flex logo">
+                <img src="./assets/images/icons/logo.png" alt="" width="35px">
+                <h3>
+                    کلاب بوک
+                </h3>
+            </div>
+
+            <div class="search-box">
+                <input class="input_header" type="search" placeholder="Title , Autor , publishre">
+                <img class="search" src="./assets/images/icons/search.svg" alt="" width="32px">
+            </div>
+            <div class="btn-container-header">
+
+                <div class="flex header_container_shopping">
+                    <img src="./assets/images/icons/user-svgrepo-p.svg" alt="" width="20px">
+                    <h4>
+                        ثبت نام / ورود
+                    </h4>
+                </div>
+
+                <div class="flex header_container_shopping" id="cart-icon" onclick="handleCartClick()">
+                    <img src="./assets/images/icons/shopping-cart-p.svg" alt="" width="20px">
+                    <h4>
+                        سبد خرید
+                    </h4>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+
+            <!--modal-shoppingcard-->
+
+            <div id="cart-modal" class="modal hidden containerAll">
+                <div class="modal-content">
+                    <div class="modal-content-title">
+                        <span class="close" onclick="handleCartClick()">&times;</span>
+                        <h3>
+                            مشاهده سبد خرید
+                        </h3>
+                    </div>
+                    <ul id="cart"></ul>
+                    <div class="cart-modal-containerbtn"><button>پرداخت</button></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="navbar">
+            <ul>
+                <li>
+                    درباره ما
+                </li>
+                <li>
+                    ارتباط با ما
+                </li>
+                <li>
+                    دسته بندی ها
+                </li>
+                <li>
+                    وبلاگ
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+    <section class="container-img containerAll" id="mydiv">
+
+        <div class="container-img-right">
+            <img src="./assets/images/img/20.png" alt="" width="500px">
+        </div>
+        <div class="container-img-left">
+            <div class="box">
+                <img src="./assets/images/icons/book-2-svgrepo-com.svg" alt="" width="40px">
+                <h3>
+                    نمونه کتاب های چاپ شده
+                </h3>
+            </div>
+            <div class="box">
+
+                <img src="./assets/images/icons/search.svg" alt="" width="40px">
+
+                <h3>
+                    اگرکتاب مورد نظرتان درسایت موجود نیست به مااطلاع بدهید
+                </h3>
+            </div>
+            <div class="box">
+                <img src="./assets/images/icons/percent.svg" alt="" width="30px">
+                <h3>
+                    برای خرید عمده تخفیف ویژه بگیرید
+                </h3>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="line-s"></div>
+
+    <!--renderbooks-->
+
+    <main id="container">
+        <aside class="filter-container">
+            <div class="filter-buttons">
+                <button id="apply-filter-btn">
+                    اعمال فیلتر
+                </button>
+                <button id="clear-filter-btn">
+                    حذف فیلتر
+                </button>
+            </div>
+            <div id="filter"></div>
+        </aside>
+        <section id="root"></section>
+    </main>
+
+    <!--footer-->
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="top-footer">
+                <div class="item-top-footer">
+                    <img src="./assets/images/footer/footer-books.png" alt="icon" width="40px">
+                    <h4>
+                        آرشیو انواع کتاب ها
+                    </h4>
+                </div>
+
+                <div class="item-top-footer">
+                    <img src="./assets/images/footer/footer-buy.png" alt="icon" width="40px">
+                    <h4>
+                        خریدامن وآسان
+                    </h4>
+                </div>
+
+                <div class="item-top-footer">
+                    <img src="./assets/images/footer/footer-gar.png" alt="icon" width="40px">
+                    <h4>
+                        عدم اتمام موجودی
+                    </h4>
+                </div>
+
+                <div class="item-top-footer">
+                    <img src="./assets/images/footer/footer-country.png" alt="icon" width="40px">
+                    <h4>
+                        ارسال به سراسر کشور
+                    </h4>
+                </div>
+            </div>
+
+            <div class="line-f"></div>
+
+            <div class="bottom-footer">
+                <div class="item-bottom-footer">
+                    <h2>
+                        کلاب بوک
+                    </h2>
+                    <ul>
+                        <li>
+                            راهنمای خرید
+                        </li>
+                        <li>
+                            راهنمای ارسال
+                        </li>
+                        <li>
+                            سوالات متداول
+                        </li>
+                        <li>
+                            قوانین و مقررات
+                        </li>
+                        <li>
+                            تماس با ما
+                        </li>
+                        <li>
+                            وبلاگ
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mid-item-bottom-footer">
+                    <h2>
+                        با ما در تماس باشید.
+                    </h2>
+                    <div class="text-mid-item-bottom-footer">
+                        <p>
+                            <b>
+                                پشتیبانی:
+                            </b>
+                            ۰۲۱۶۶۱۲۰۱۲۰
+                        </p>
+                        <p>
+                            <b>
+                                مدیریت:
+                            </b>
+                            ۰۲۱۲۲۰۰۰۰۰۰
+                        </p>
+                        <p>
+                            <b>ساعات پاسخگویی:</b>
+                            ساعات کاری کلاب بوک در روزهای شنبه تا چهارشنبه از ساعت ۱۰:۰۰ تا ۱۹:۰۰ و در روز پنجشنبه از
+                            ساعت
+                            ۱۰:۰۰ تا ۱۴:۰۰ می‌باشد. ثبت سفارش‌ها فقط به‌صورت آنلاین انجام می‌پذیرد. تمام کتاب‌ها به‌صورت
+                            سفارشی تولید می‌شوند و در بازه زمانی اعلام‌شده تحویل داده خواهند شد. در صورت تمایل به تحویل
+                            حضوری، لطفاً پیش از مراجعه حتماً با ما تماس بگیرید.
+                        </p>
+                        <p>
+                            <b>
+                                آدرس:
+                            </b>
+                            انقلاب - خیابان کارگر جنوبی
+                        </p>
+                    </div>
+                </div>
+                <div>
+
+                    <div class="lastcol-item-bottom-footer">
+                        <div>
+                            <img src="./assets/images/footer/price.png" alt="" width="40px">
+                            <h4>
+                                قیمت منصفانه
+                            </h4>
+                        </div>
+                        <div>
+                            <img src="./assets/images/footer/qulity.png" alt="" width="40px">
+                            <h4>
+                                تضمین کیفیت کالا
+                            </h4>
+                        </div>
+                        <div>
+                            <img src="./assets/images/footer/headphone.png" alt="" width="40px">
+                            <h4>
+                                پشتیبانی تلگرامی در روز های تعطیل!
+                            </h4>
+                        </div>
+                    </div>
+                    <img src="./assets/images/footer/enamad.svg" alt="" width="100px">
+                </div>
+            </div>
+
+
+        </div>
+        <div class="color-container-media">
+            <div class="container-media">
+                <div>
+                    <img src="./assets/images/footer/logoclubbook.png" alt="" width="30px">
+                    کلاب بوک
+                </div>
+                <div class="container-media-left">
+                    <img src="./assets/images/footer/instagram.png" alt="" width="30px">
+                    <img src="./assets/images/footer/telegram.png" alt="" width="30px">
+                    <img src="./assets/images/footer/twitter.png" alt="" width="30px">
+                    <img src="./assets/images/footer/whatsapp.png" alt="" width="30px">
+                    <img src="./assets/images/footer/linkedin.png" alt="" width="30px">
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
